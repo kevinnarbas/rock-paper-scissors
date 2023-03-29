@@ -1,27 +1,47 @@
 let choices = ['rock', 'paper', 'scissors']
+let computerScore = 0
+let playerScore = 0
+console.log(playerScore, computerScore)
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1
     return choices[randomNumber - 1]
 }
 function playRound(playerChoice,computersChoice) {
     if (playerChoice === 'rock' && computersChoice === 'paper'){
-        return 'You Lose! Paper beats Rock'
+        computerScore++
+        document.getElementById('computer').innerHTML = computerScore
+        document.getElementById('result').innerHTML = 'You Lose! Paper beats Rock'
     } else if (playerChoice === 'rock' && computersChoice === 'scissors'){
-        return 'You win! Rock beats paper'
+        playerScore++
+        document.getElementById('player').innerHTML = playerScore
+        document.getElementById('result').innerHTML = 'You win! Rock beats paper'
     } else if (playerChoice === 'paper' && computersChoice === 'scissors'){
-        return 'You Lose! Scissors beats Paper'
+        computerScore++
+        document.getElementById('computer').innerHTML = computerScore
+        document.getElementById('result').innerHTML = 'You Lose! Scissors beats Paper'
     } else if (playerChoice === 'paper' && computersChoice === 'rock'){
-        return 'You Win! Paper beats Rock'
+        playerScore++
+        document.getElementById('player').innerHTML = playerScore
+        document.getElementById('result').innerHTML = 'You Win! Paper beats Rock'
     } else if (playerChoice === 'scissors' && computersChoice === 'rock'){
-        return 'You Lose! Rock beats scissors'
+        computerScore++
+        document.getElementById('computer').innerHTML = computerScore
+        document.getElementById('result').innerHTML = 'You Lose! Rock beats scissors'
     } else if (playerChoice === 'scissors' && computersChoice === 'paper'){
-        return 'You Win! Scissors beats Paper'
+        playerScore++
+        document.getElementById('player').innerHTML = playerScore
+        document.getElementById('result').innerHTML = 'You Win! Scissors beats Paper'
     } else {
-        return 'Tie Game'
+        document.getElementById('result').innerHTML = 'Tie Game'
     }
 }
-for(let i = 0; i < 5; i++){
-    let computersChoice = getComputerChoice()
-    let playerChoice = prompt('Please type Rock, Paper, or Scissors').toLowerCase()
-    console.log(playRound(playerChoice,computersChoice))
-}
+// let computersChoice = getComputerChoice()
+// let playerChoice
+// let choose = choice => playerChoice = choice
+// console.log(playRound(playerChoice, computersChoice))
+// document.addEventListener('click', playRound(playerChoice, computersChoice))
+// for(let i = 0; i < 5; i++){
+//     let computersChoice = getComputerChoice()
+//     let playerChoice = prompt('Please type Rock, Paper, or Scissors').toLowerCase()
+//     console.log(playRound(playerChoice,computersChoice))
+// }

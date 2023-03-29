@@ -7,6 +7,31 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+        <h3>You VS. Computer</h3>
+    </header>
+    <main>
+        <h2>Choose wisely...</h2>
+        <button onclick='playRound("rock", getComputerChoice())'>✊</button>
+        <button onclick='playRound("paper", getComputerChoice())'>✋</button>
+        <button onclick='playRound("scissor", getComputerChoice())'>✌️</button>
+        <div>
+            <div id='result'></div>
+            <p>score</p>
+            <p>Player : <div id='player'>0</div></p>
+            <p>Computer : <div id='computer'>0</div></p>
+        </div>
+    </main>
+    <footer>
+        <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        Kevinn Arbas
+      </p>
+    </footer>
     <script src="javascript.js"></script>
 </body>
 </html>
